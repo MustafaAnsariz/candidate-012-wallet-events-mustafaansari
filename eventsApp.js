@@ -8,6 +8,10 @@ const port = 3001;
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Event Bus API is running. Use POST /api/events/publish.');
+});
+
 // This is the main endpoint for receiving events
 app.post('/api/events/publish', async (req, res) => {
   const { type, payload } = req.body;
