@@ -43,6 +43,12 @@ app.post('/api/events/publish', async (req, res) => {
 });
 
 
+app.post('/api/enroll', (req, res) => {
+  console.log('Enroll endpoint called:', req.body);
+  res.status(200).json({ message: 'User enrolled successfully.' });
+});
+
+
 app.listen(port, () => {
   console.log(`Events service is running on http://localhost:${port}`);
 });
